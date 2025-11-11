@@ -353,53 +353,74 @@
                     <h3 class="section-subheading text-muted">Reach out for your best smile.</h3>
                 </div>
               <!-- Contact Form-->
-                <form id="contactForm">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" required />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" required />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" required></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submit" type="submit">Send Message</button></div>
-                </form>
-            </div>
-        </section>
+             <section class="page-section" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">Contact Us</h2>
+      <h3 class="section-subheading text-muted">Reach out for your best smile.</h3>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contactForm">
+      <div class="row align-items-stretch mb-5">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input class="form-control" id="name" type="text" placeholder="Your Name *" required />
+            <div class="invalid-feedback">A name is required.</div>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" id="email" type="email" placeholder="Your Email *" required />
+            <div class="invalid-feedback">An email is required.</div>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" />
+          </div>
+
+          <!-- New Dropdown Field -->
+          <div class="form-group mb-md-0">
+            <select class="form-control" id="service" required>
+              <option value="" disabled selected>Select a Service *</option>
+              <option value="Root canal treatments and composite fillings">
+                Root canal treatments and composite fillings
+              </option>
+              <option value="Zirconia crowns">Zirconia crowns</option>
+              <option value="Emax veneers">Emax veneers</option>
+              <option value="Implantology">Implantology</option>
+              <option value="Orthodontics">Orthodontics</option>
+              <option value="Teeth whitening">Teeth whitening</option>
+            </select>
+            <div class="invalid-feedback">Please select a service.</div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group form-group-textarea mb-md-0">
+            <textarea class="form-control" id="message" placeholder="Your Message *" required></textarea>
+            <div class="invalid-feedback">A message is required.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success / Error Messages -->
+      <div class="d-none" id="submitSuccessMessage">
+        <div class="text-center text-white mb-3">
+          <div class="fw-bolder">Form submission successful!</div>
+        </div>
+      </div>
+      <div class="d-none" id="submitErrorMessage">
+        <div class="text-center text-danger mb-3">Error sending message!</div>
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-primary btn-xl text-uppercase" id="submit" type="submit">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
