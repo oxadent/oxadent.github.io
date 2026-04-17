@@ -425,7 +425,144 @@
                 </div>
             </div>
         </section>
-       
+       <section class="beforeAfter-slider" id="beforeAfter-slider">
+       <div class="container">
+       <style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* CONTAINER */
+.slider {
+    position: relative;
+    width: 700px;
+    max-width: 95%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* IMAGES */
+.slider img {
+    width: 100%;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+.after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 50% 0 0); /* KEY FIX */
+}
+
+/* LINE */
+.line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    z-index: 2;
+}
+
+/* HANDLE */
+.handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 42px;
+    height: 42px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: ew-resize;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* LABELS */
+.label {
+    position: absolute;
+    top: 15px;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+}
+
+.before-label { left: 15px; }
+.after-label { right: 15px; }
+</style>
+
+
+           <div class="slider" id="slider">
+    <img src="before.jpg" alt="Before">
+
+    <img src="after.jpg" class="after" id="afterImg" alt="After">
+
+    <div class="line" id="line"></div>
+    <div class="handle" id="handle">⇄</div>
+
+    <div class="label before-label">Before</div>
+    <div class="label after-label">After</div>
+</div>
+
+<script>
+const slider = document.getElementById("slider");
+const afterImg = document.getElementById("afterImg");
+const handle = document.getElementById("handle");
+const line = document.getElementById("line");
+
+let dragging = false;
+
+const update = (x) => {
+    const rect = slider.getBoundingClientRect();
+    let pos = x - rect.left;
+
+    if (pos < 0) pos = 0;
+    if (pos > rect.width) pos = rect.width;
+
+    const percent = (pos / rect.width) * 100;
+
+    // THIS IS THE FIX
+    afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+
+    handle.style.left = percent + "%";
+    line.style.left = percent + "%";
+};
+
+// Mouse
+handle.addEventListener("mousedown", () => dragging = true);
+window.addEventListener("mouseup", () => dragging = false);
+window.addEventListener("mousemove", (e) => {
+    if (!dragging) return;
+    update(e.clientX);
+});
+
+// Touch
+handle.addEventListener("touchstart", () => dragging = true);
+window.addEventListener("touchend", () => dragging = false);
+window.addEventListener("touchmove", (e) => {
+    if (!dragging) return;
+    update(e.touches[0].clientX);
+});
+</script>
+       </div>
+       </section>
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
