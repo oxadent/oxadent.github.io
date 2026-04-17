@@ -425,41 +425,69 @@
                 </div>
             </div>
         </section>
-       <section class="beforeAfter-slider" id="beforeAfter-slider">
-           <h2 class="section-heading text-uppercase text-center">Real Results. Real Confidence.</h2>
-<h3 class="section-subheading text-muted text-center">Drag the slider to reveal the transformation.</h3>
-       <div class="container my-5">
-       <style>
+ <section class="beforeAfter-slider py-5 bg-light" id="beforeAfter-slider">
+    <div class="container text-center">
 
-/* CONTAINER */
+        <!-- TITLE -->
+        <h2 class="section-heading text-uppercase mb-2">
+            Real Results. Real Confidence.
+        </h2>
+        <h3 class="section-subheading text-muted mb-5">
+            Drag the slider to reveal the transformation.
+        </h3>
+
+        <!-- SLIDER WRAPPER -->
+        <div class="d-flex justify-content-center">
+            <div class="slider" id="slider">
+                <img src="before.jpg" alt="Before">
+
+                <img src="after.jpg" class="after" id="afterImg" alt="After">
+
+                <div class="line" id="line"></div>
+                <div class="handle" id="handle">⇄</div>
+
+                <div class="label before-label">Before</div>
+                <div class="label after-label">After</div>
+            </div>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <p class="text-muted mt-4 mx-auto" style="max-width:600px;">
+            This case demonstrates a full smile transformation using zirconia crowns, correcting discoloration, alignment, and restoring natural aesthetics.
+        </p>
+
+        <!-- CTA -->
+        <div class="mt-4">
+            <a href="#contact" class="btn btn-dark text-light btn-lg text-uppercase">
+                Book Your Consultation
+            </a>
+        </div>
+
+    </div>
+     <style>
+
 .slider {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 700px;
-    max-width: 95%;
+    width: 100%;
+    max-width: 650px;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
-/* IMAGES */
 .slider img {
     width: 100%;
     display: block;
-    user-select: none;
-    pointer-events: none;
 }
 
 .after {
     position: absolute;
     top: 0;
     left: 0;
-    clip-path: inset(0 50% 0 0); /* KEY FIX */
+    clip-path: inset(0 50% 0 0);
 }
 
-/* LINE */
+/* divider line */
 .line {
     position: absolute;
     top: 0;
@@ -470,7 +498,7 @@
     z-index: 2;
 }
 
-/* HANDLE */
+/* handle */
 .handle {
     position: absolute;
     top: 50%;
@@ -480,16 +508,12 @@
     height: 42px;
     background: white;
     border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     cursor: ew-resize;
     z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
 }
 
-/* LABELS */
+/* labels */
 .label {
     position: absolute;
     top: 15px;
@@ -498,30 +522,13 @@
     border-radius: 20px;
     background: rgba(0,0,0,0.6);
     color: #fff;
+    backdrop-filter: blur(6px);
 }
 
 .before-label { left: 15px; }
 .after-label { right: 15px; }
 </style>
-
-
-           <div class="slider" id="slider">
-    <img src="before.jpg" alt="After">
-
-    <img src="after.jpg" class="after" id="afterImg" alt="Before">
-
-    <div class="line" id="line"></div>
-    <div class="handle" id="handle">⇄</div>
-
-    <div class="label after-label">Before</div>
-    <div class="label before-label">After</div>
-               <div class="mt-4 text-center">
-</div>
-</div>
-    <p class="text-muted" style="max-width:800px; margin:auto;">
-        This case demonstrates a full smile transformation using zirconia crowns, correcting discoloration, alignment, and restoring natural aesthetics. The result is a brighter, healthier, and more confident smile.
-    </p>
-
+</section>
 <script>
 const slider = document.getElementById("slider");
 const afterImg = document.getElementById("afterImg");
