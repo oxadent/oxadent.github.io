@@ -537,13 +537,35 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 42px;
-    height: 42px;
-    background: white;
+    
+    width: 50px;
+    height: 50px;
+    
+    background: #ffffff;
     border-radius: 50%;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    
     cursor: ew-resize;
     z-index: 3;
+
+    transition: all 0.3s ease;
+}
+
+/* ICON */
+.handle i {
+    font-size: 18px;
+    color: #333;
+}
+
+/* HOVER EFFECT */
+.handle:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
 /* labels */
