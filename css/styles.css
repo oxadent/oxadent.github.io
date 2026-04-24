@@ -10833,6 +10833,14 @@ body {
   position: relative;
 }
 
+h2 {
+    letter-spacing: 1px;
+}
+
+p {
+    line-height: 1.7;
+}
+
 p {
   line-height: 1.75;
 }
